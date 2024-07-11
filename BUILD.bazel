@@ -1,0 +1,16 @@
+load("@local_config_platform//:constraints.bzl", "HOST_CONSTRAINTS")
+
+platform(
+    name = "platform",
+    constraint_values = HOST_CONSTRAINTS,
+    flags = [
+        # Try commenting out the line below, rebuilding, and then commenting it
+        # out again!
+        "--non=sense",
+    ],
+)
+
+cc_binary(
+    name = "hello",
+    srcs = ["main.cc"],
+)
